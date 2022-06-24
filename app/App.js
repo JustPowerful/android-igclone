@@ -1,12 +1,4 @@
-import {
-  StyleSheet,
-  Text,
-  SafeAreaView,
-  Platform,
-  StatusBar,
-  TouchableHighlight,
-  View,
-} from "react-native";
+import { StyleSheet, Platform, StatusBar } from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
 import TabNavigator from "./components/home/TabNavigator";
@@ -16,7 +8,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <TabNavigator />
+      <TabNavigator style={styles.screenStyle} />
     </NavigationContainer>
   );
 }
@@ -26,5 +18,8 @@ const styles = StyleSheet.create({
     backgroundColor: "dodgerblue",
     justifyContent: "center",
     alignItems: "center",
+  },
+  screenStyle: {
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
 });

@@ -10,9 +10,10 @@ import Post from "../../screen/Post";
 
 const Tab = createBottomTabNavigator();
 
-const TabNavigator = () => {
+const TabNavigator = ({ style }) => {
   return (
     <Tab.Navigator
+      sceneContainerStyle={style}
       screenOptions={{
         tabBarShowLabel: false,
         tabBarStyle: {
@@ -20,7 +21,7 @@ const TabNavigator = () => {
           bottom: 0,
           elevation: 0,
           backgroundColor: "white",
-          height: 45,
+          height: 50,
         },
         headerShown: false,
       }}
@@ -30,7 +31,12 @@ const TabNavigator = () => {
         component={Home}
         options={{
           tabBarIcon: ({ focused }) => (
-            <View style={{ alignItems: "center", justifyContent: "center" }}>
+            <View
+              style={{
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
               <Image
                 source={require("../../assets/icons/home.png")}
                 resizeMode="contain"
