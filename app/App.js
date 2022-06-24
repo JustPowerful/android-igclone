@@ -1,7 +1,7 @@
 import { StyleSheet, Platform, StatusBar } from "react-native";
 
 import { NavigationContainer } from "@react-navigation/native";
-import TabNavigator from "./components/home/TabNavigator";
+import TabNavigator from "./components/TabNavigator";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();

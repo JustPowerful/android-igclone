@@ -2,11 +2,13 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React from "react";
 
-import Home from "../../screen/Home";
-import MainProfile from "../../screen/MainProfile";
-import Search from "../../screen/Search";
-import Shop from "../../screen/Shop";
-import Post from "../../screen/Post";
+import Home from "../screen/Home";
+import MainProfile from "../screen/MainProfile";
+import Search from "../screen/Search";
+import Shop from "../screen/Shop";
+import Post from "../screen/Post";
+
+import PostButton from "./PostButton";
 
 const Tab = createBottomTabNavigator();
 
@@ -38,7 +40,7 @@ const TabNavigator = ({ style }) => {
               }}
             >
               <Image
-                source={require("../../assets/icons/home.png")}
+                source={require("../assets/icons/home.png")}
                 resizeMode="contain"
                 style={{
                   width: 20,
@@ -60,7 +62,7 @@ const TabNavigator = ({ style }) => {
           tabBarIcon: ({ focused }) => (
             <View style={{ alignItems: "center", justifyContent: "center" }}>
               <Image
-                source={require("../../assets/icons/search.png")}
+                source={require("../assets/icons/search.png")}
                 resizeMode="contain"
                 style={{
                   width: 20,
@@ -82,19 +84,17 @@ const TabNavigator = ({ style }) => {
           tabBarIcon: ({ focused }) => (
             <View style={{ alignItems: "center", justifyContent: "center" }}>
               <Image
-                source={require("../../assets/icons/post.png")}
+                source={require("../assets/icons/post.png")}
                 resizeMode="contain"
                 style={{
-                  width: 20,
-                  height: 20,
-                  tintColor: focused ? "dodgerblue" : "black",
+                  width: 30,
+                  height: 30,
+                  tintColor: "white",
                 }}
               />
-              <Text style={{ color: focused ? "dodgerblue" : "black" }}>
-                Post
-              </Text>
             </View>
           ),
+          tabBarButton: (props) => <PostButton {...props} />,
         }}
       />
       <Tab.Screen
@@ -104,7 +104,7 @@ const TabNavigator = ({ style }) => {
           tabBarIcon: ({ focused }) => (
             <View style={{ alignItems: "center", justifyContent: "center" }}>
               <Image
-                source={require("../../assets/icons/shop.png")}
+                source={require("../assets/icons/shop.png")}
                 resizeMode="contain"
                 style={{
                   width: 20,
@@ -126,7 +126,7 @@ const TabNavigator = ({ style }) => {
           tabBarIcon: ({ focused }) => (
             <View style={{ alignItems: "center", justifyContent: "center" }}>
               <Image
-                source={require("../../assets/icons/profile.png")}
+                source={require("../assets/icons/profile.png")}
                 resizeMode="contain"
                 style={{
                   width: 20,
