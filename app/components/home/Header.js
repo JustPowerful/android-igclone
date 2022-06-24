@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Header() {
   return (
-    <View style={{ backgroundColor: "white", height: 50 }}>
+    <View style={styles.header}>
       <View style={{ flex: 1, justifyContent: "center" }}>
         <Image
           source={require("../../assets/home/logo.png")}
@@ -15,4 +15,14 @@ export default function Header() {
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  header: {
+    backgroundColor: "white",
+    height: 50,
+    shadowColor: "#171717",
+    shadowOffset: { width: -2, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 3,
+  },
+});

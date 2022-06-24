@@ -48,9 +48,6 @@ const TabNavigator = ({ style }) => {
                   tintColor: focused ? "dodgerblue" : "black",
                 }}
               />
-              <Text style={{ color: focused ? "dodgerblue" : "black" }}>
-                Home
-              </Text>
             </View>
           ),
         }}
@@ -70,9 +67,6 @@ const TabNavigator = ({ style }) => {
                   tintColor: focused ? "dodgerblue" : "black",
                 }}
               />
-              <Text style={{ color: focused ? "dodgerblue" : "black" }}>
-                Search
-              </Text>
             </View>
           ),
         }}
@@ -112,9 +106,6 @@ const TabNavigator = ({ style }) => {
                   tintColor: focused ? "dodgerblue" : "black",
                 }}
               />
-              <Text style={{ color: focused ? "dodgerblue" : "black" }}>
-                Shop
-              </Text>
             </View>
           ),
         }}
@@ -134,9 +125,6 @@ const TabNavigator = ({ style }) => {
                   tintColor: focused ? "dodgerblue" : "black",
                 }}
               />
-              <Text style={{ color: focused ? "dodgerblue" : "black" }}>
-                Profile
-              </Text>
             </View>
           ),
         }}
