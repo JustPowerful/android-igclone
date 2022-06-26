@@ -1,10 +1,7 @@
 import { StyleSheet, Text, View, ScrollView, Image } from "react-native";
 import React from "react";
 
-// Testing env
-import users from "../../assets/TEST/profiles.json";
-
-export default function StoryList({ props, style }) {
+export default function StoryList({ props, style, users }) {
   return (
     <View
       style={[style, { borderBottomColor: "gray", borderBottomWidth: 0.2 }]}

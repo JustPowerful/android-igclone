@@ -1,25 +1,26 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
 import { useState } from "react";
 
 export default function ReadMore({ elementText, maxCharacterCount = 100 }) {
   const text = elementText;
   [isTruncated, setIsTruncated] = useState(true);
-  const resultString = isTruncated
-    ? text.substring(0, maxCharacterCount) + "..."
-    : text;
+  let resultString = "";
+  if (isTruncated) {
+    resultString = text.substring(0, maxCharacterCount) + "...";
+  } else {
+    resultString = text;
+  }
   const handlePress = () => {
-    setIsTruncated(!isTruncated);
+    setIsTruncated((oldState) => !oldState);
+    console.log(isTruncated);
   };
 
   return (
     <View>
-      <Text onPress={handlePress}>
-        {resultString}{" "}
-        <Text style={{ color: "gray" }}>
-          {isTruncated ? "read more" : null}
-        </Text>
-      </Text>
+      <TouchableOpacity onPress={handlePress}>
+        <Text>{resultString}</Text>
+      </TouchableOpacity>
     </View>
   );
 }

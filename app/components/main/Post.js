@@ -3,7 +3,7 @@ import React from "react";
 
 import ReadMore from "./ReadMore";
 
-export default function Post() {
+export default function Post({ item }) {
   return (
     <View>
       <View
@@ -18,11 +18,11 @@ export default function Post() {
       >
         <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Image
-            source={require("../../assets/TEST/profilepics/1.jpg")}
+            source={{ uri: item.picture }}
             resizeMode="contain"
             style={{ width: 40, height: 40, borderRadius: 20, marginRight: 4 }}
           />
-          <Text style={{ fontWeight: "500" }}> bidi.aboul </Text>
+          <Text style={{ fontWeight: "500" }}> {item.username} </Text>
         </View>
         <View>
           <Image
@@ -33,7 +33,11 @@ export default function Post() {
         </View>
       </View>
       <Image
-        source={require("../../assets/TEST/post/post.jpg")}
+        source={{
+          uri: `https://picsum.photos/1000/1000/?random&dummyParam=${Math.floor(
+            Math.random() * 9999
+          )}`,
+        }}
         resizeMode="cover"
         style={{ width: "100%", height: 350 }}
       />
@@ -43,6 +47,7 @@ export default function Post() {
             flexDirection: "row",
             justifyContent: "space-between",
             alignItems: "center",
+            backgroundColor: "white",
           },
           styles.postBtnContainer,
         ]}
@@ -90,5 +95,6 @@ const styles = StyleSheet.create({
   },
   descriptionContainer: {
     padding: 10,
+    backgroundColor: "white",
   },
 });
