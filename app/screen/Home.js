@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <View style={styles.home}>
       <Header />
-      <StoryList style={{ marginTop: 10 }} />
+      <StoryList style={{ paddingVertical: 10, backgroundColor: "white" }} />
 
       <View>
         <Post />
@@ -21,7 +21,6 @@ const Home = () => {
 const styles = StyleSheet.create({
   home: {
     flex: 1,
-    backgroundColor: "white",
   },
 });
 
