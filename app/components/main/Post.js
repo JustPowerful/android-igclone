@@ -3,7 +3,7 @@ import React from "react";
 
 import ReadMore from "./ReadMore";
 
-export default function Post({ item }) {
+export default function Post({ item, index }) {
   return (
     <View>
       <View
@@ -76,6 +76,7 @@ export default function Post({ item }) {
       {/* Description view */}
       <View style={styles.descriptionContainer}>
         <ReadMore
+          key={index}
           maxCharacterCount={80}
           elementText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique fuga et magnam odit, culpa architecto molestias beatae aliquam aperiam ipsum est unde expedita, doloremque non officiis! Blanditiis sint expedita quia."
         />
