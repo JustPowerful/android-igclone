@@ -32,6 +32,7 @@ const Home = () => {
 const styles = StyleSheet.create({
   home: {
     flex: 1,
+    paddingBottom: 50,
   },
 });
 
