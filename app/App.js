@@ -4,12 +4,19 @@ import { NavigationContainer } from "@react-navigation/native";
 import TabNavigator from "./components/TabNavigator";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+import { PortalProvider } from "@gorhom/portal";
+import { GestureHandlerRootView } from "react-native-gesture-handler"; // Necessairy for Detecting gesture
+
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
-    <NavigationContainer>
-      <TabNavigator style={styles.screenStyle} />
-    </NavigationContainer>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <PortalProvider>
+        <NavigationContainer>
+          <TabNavigator style={styles.screenStyle} />
+        </NavigationContainer>
+      </PortalProvider>
+    </GestureHandlerRootView>
   );
 }
 
